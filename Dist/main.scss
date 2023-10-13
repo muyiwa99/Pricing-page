@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import "config";
+
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: $light-g-blue;
+
+  height: 100%;
+  //  background image
+  &::before {
+    content: "";
+    height: 658px;
+    width: 375px;
+    position: absolute;
+    display: block;
+    top: -6rem;
+    left: 56rem;
+    z-index: -1;
+    background: url(/images/bg-top.svg) no-repeat;
+  }
+
+  //   background image
+  &::after {
+    content: "";
+    bottom: 0;
+    height: 304px;
+    width: 353px;
+    position: absolute;
+    display: block;
+    background: url(/images/bg-bottom.svg) no-repeat;
+    z-index: -1;
+  }
+}
+
+.toggle {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+// Main section
+.main {
+  margin: 6rem auto;
+  width: 80%;
+  position: relative;
+  z-index: 1;
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    h1 {
+      color: $dark-gray-blue;
+    }
+
+    // Toggle switch
+    .switch {
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+
+      position: relative;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:checked + .round-slider {
+          background-color: #2196f3;
+        }
+
+        &:focus + .round-slider {
+          box-shadow: 0 0 1px #2196f3;
+        }
+
+        &:checked + .round-slider::before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+      }
+
+      //   Slider
+      .round-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: hsl(237, 63%, 64%);
+        transition: 0.4s;
+        border-radius: 34px;
+
+        &::before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: #fff;
+          transition: 0.4s;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}
+
+// Pricing section with 3 container
+.pricing {
+  width: 80%;
+  margin: 4rem auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  // container with for each price plan
+  &-container {
+    padding: 1.5rem;
+    background: $white;
+    border-radius: 8px;
+    width: Min(80%, 380px);
+    height: 400px;
+    // The middle container
+    &:nth-child(2) {
+      background: $linear-gradient;
+      color: $white;
+      height: 470px;
+      position: relative;
+      top: -1rem;
+      li {
+        color: $white;
+      }
+
+      h3 {
+        margin-top: 1rem;
+        color: $white;
+      }
+
+      button {
+        background: $white;
+        color: $blue;
+        &:hover {
+          background: transparent;
+          border: $white 1px solid;
+          color: $white;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 1rem;
+      color: $grayish-blue;
+      margin-block-end: 1.5rem;
+    }
+    // Annual prices
+    .annual,
+    .monthly h2 {
+      font-weight: 900;
+      margin-block-end: 2rem;
+    }
+    .monthly {
+      font-size: 2rem;
+
+      display: none;
+    }
+
+    .annual {
+      display: block;
+      font-size: 2rem;
+    }
+
+    &-features li {
+      margin: 1.2rem 0;
+      border-bottom: 1px solid $black;
+      padding-block-end: 20px;
+      color: $grayish-blue;
+
+      &:nth-child(1) {
+        border-top: 1px solid $black;
+        padding-top: 10px;
+      }
+
+      &:nth-child(3) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &-button button {
+      padding: 1rem 7rem;
+      font-size: 0.8rem;
+      background: $linear-gradient;
+      border: none;
+      border-radius: 4px;
+      color: $white;
+      cursor: pointer;
+
+      &:hover {
+        background: $white;
+        color: $blue;
+        border: 1px $blue solid;
+      }
+    }
+  }
+}

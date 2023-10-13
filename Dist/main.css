@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #f6f6fe;
+  height: 100%;
+}
+
+body::before {
+  content: "";
+  height: 658px;
+  width: 375px;
+  position: absolute;
+  display: block;
+  top: -6rem;
+  left: 56rem;
+  z-index: -1;
+  background: url(/images/bg-top.svg) no-repeat;
+}
+
+body::after {
+  content: "";
+  bottom: 0;
+  height: 304px;
+  width: 353px;
+  position: absolute;
+  display: block;
+  background: url(/images/bg-bottom.svg) no-repeat;
+  z-index: -1;
+}
+
+.toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main {
+  margin: 6rem auto;
+  width: 80%;
+  position: relative;
+  z-index: 1;
+}
+
+.main-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.main-header h1 {
+  color: #494c5f;
+}
+
+.main-header .switch {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+}
+
+.main-header .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.main-header .switch input:checked + .round-slider {
+  background-color: #2196f3;
+}
+
+.main-header .switch input:focus + .round-slider {
+  -webkit-box-shadow: 0 0 1px #2196f3;
+          box-shadow: 0 0 1px #2196f3;
+}
+
+.main-header .switch input:checked + .round-slider::before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.main-header .switch .round-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #696fdd;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.main-header .switch .round-slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.pricing {
+  width: 80%;
+  margin: 4rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.pricing-container {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  width: Min(80%, 380px);
+  height: 400px;
+}
+
+.pricing-container:nth-child(2) {
+  background: linear-gradient(49deg, #a3a8f0, #696fdd);
+  color: white;
+  height: 470px;
+  position: relative;
+  top: -1rem;
+}
+
+.pricing-container:nth-child(2) li {
+  color: white;
+}
+
+.pricing-container:nth-child(2) h3 {
+  margin-top: 1rem;
+  color: white;
+}
+
+.pricing-container:nth-child(2) button {
+  background: white;
+  color: #696fdd;
+}
+
+.pricing-container:nth-child(2) button:hover {
+  background: transparent;
+  border: white 1px solid;
+  color: white;
+}
+
+.pricing-container h3 {
+  font-size: 1rem;
+  color: #6d708d;
+  -webkit-margin-after: 1.5rem;
+          margin-block-end: 1.5rem;
+}
+
+.pricing-container .annual,
+.pricing-container .monthly h2 {
+  font-weight: 900;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+}
+
+.pricing-container .monthly {
+  font-size: 2rem;
+  display: none;
+}
+
+.pricing-container .annual {
+  display: block;
+  font-size: 2rem;
+}
+
+.pricing-container-features li {
+  margin: 1.2rem 0;
+  border-bottom: 1px solid black;
+  -webkit-padding-after: 20px;
+          padding-block-end: 20px;
+  color: #6d708d;
+}
+
+.pricing-container-features li:nth-child(1) {
+  border-top: 1px solid black;
+  padding-top: 10px;
+}
+
+.pricing-container-features li:nth-child(3) {
+  margin-bottom: 2rem;
+}
+
+.pricing-container-button button {
+  padding: 1rem 7rem;
+  font-size: 0.8rem;
+  background: linear-gradient(49deg, #a3a8f0, #696fdd);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.pricing-container-button button:hover {
+  background: white;
+  color: #696fdd;
+  border: 1px #696fdd solid;
+}
+/*# sourceMappingURL=main.css.map */
